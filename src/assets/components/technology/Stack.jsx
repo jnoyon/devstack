@@ -47,14 +47,12 @@ export default function Stack({
             className="btn w-full btn-outline border-red-500 text-red-500"
             onClick={removeAll}
           >
-            {" "}
-            Remove All{" "}
+            Remove All
           </button>
         </div>
       ) : (
-        <div className="border border-dashed border-gray-300 p-5">
-          {" "}
-          Your stack is empty.{" "}
+        <div className="border border-dashed border-gray-300 text-gray-700 p-5">
+          Your stack is empty.
         </div>
       )}
     </div>
