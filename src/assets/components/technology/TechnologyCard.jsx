@@ -1,3 +1,5 @@
+import { MdOutlineStarPurple500 } from "react-icons/md";
+
 export default function TechnologyCard({ technology, handleAdd, isAdded }) {
   return (
     <div
@@ -30,9 +32,13 @@ export default function TechnologyCard({ technology, handleAdd, isAdded }) {
           {technology.category}
         </p>
 
-        <p>{technology.difficulty}</p>
+        <p className="text-xs">{technology.difficulty}</p>
 
-        <p>{technology.rating}</p>
+        <p className="flex items-center gap-1">
+          {" "}
+          <MdOutlineStarPurple500 className="text-yellow-500" />{" "}
+          <span> {technology.rating} </span>{" "}
+        </p>
       </div>
 
       <button
