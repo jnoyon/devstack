@@ -4,6 +4,7 @@ import Hero from "./assets/components/Hero";
 import Header from "./assets/components/Header";
 import Footer from "./assets/components/Footer";
 import Technologies from "./assets/components/Technologies";
+import FAQ from "./assets/components/FAQ";
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
       <div className="w-11/12 mx-auto">
         <Hero />
         <Technologies />
+        <FAQ />
       </div>
       <ToastContainer />
       <Footer />

@@ -25,7 +25,7 @@ export default function Technologies() {
   console.log(handleAdd);
   return (
     <>
-      <div className="mb-2">
+      <div className="mb-2" id="technologies">
         <h2 className="text-2xl font-bold">
           Expore the <span className="gradient-text">Technology</span>{" "}
         </h2>
@@ -34,7 +34,7 @@ export default function Technologies() {
         </span>
       </div>
 
-      <div className="flex">
+      <div className="flex gap-5 justify-between">
         <div className="md:w-8/12">
           <div className="grid md:grid-cols-3 gap-5">
             {technologies.map((technology) => (

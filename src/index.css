@@ -4,6 +4,10 @@
   color: #db2777;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 /* Gradient Text */
 .gradient-text {
   background: linear-gradient(100deg, #ff6b1a 0%, #ec4899 50%, #9333ea 100%);
