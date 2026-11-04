@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function Accordion({ title, desc }) {
   return (
     <div>

@@ -1,6 +1,10 @@
 import { FaTimes } from "react-icons/fa";
 
-export default function Stack({ selectedTechnologies, handleRemove }) {
+export default function Stack({
+  selectedTechnologies,
+  handleRemove,
+  removeAll,
+}) {
   return (
     <div className="border border-gray-300 rounded-2xl p-5">
       <h2 className="font-bold"> Your Stack </h2>
@@ -38,6 +42,14 @@ export default function Stack({ selectedTechnologies, handleRemove }) {
               </div>
             </div>
           ))}
+
+          <button
+            className="btn w-full btn-outline border-red-500 text-red-500"
+            onClick={removeAll}
+          >
+            {" "}
+            Remove All{" "}
+          </button>
         </div>
       ) : (
         <div className="border border-dashed border-gray-300 p-5">

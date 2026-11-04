@@ -1,6 +1,12 @@
-export default function TechnologyCard({ technology, handleAdd }) {
+export default function TechnologyCard({ technology, handleAdd, isAdded }) {
   return (
-    <div className="card border border-gray-200 p-3 rounded-2xl">
+    <div
+      className={`card p-3 rounded-2xl transition-all duration-200 ${
+        isAdded
+          ? "border-2 border-pink-500 shadow-md"
+          : "border border-gray-200 hover:border-gray-400"
+      }`}
+    >
       <div className="flex items-center justify-between gap-2">
         <img
           src={technology.icon}
@@ -9,23 +15,34 @@ export default function TechnologyCard({ technology, handleAdd }) {
           alt={technology.name}
           className="mb-2"
         />
+
         <p className="bg-gray-200 text-xs px-5 py-1 rounded-full text-pink-400">
-          {" "}
-          {technology.badge}{" "}
+          {technology.badge}
         </p>
       </div>
-      <h2 className="font-bold text-xl mb-2"> {technology.name} </h2>
-      <p className="text-sm text-gray-600 mb-5"> {technology.description} </p>
+
+      <h2 className="font-bold text-xl mb-2">{technology.name}</h2>
+
+      <p className="text-sm text-gray-600 mb-5">{technology.description}</p>
+
       <div className="flex justify-between gap-2 text-gray-500 text-sm mb-3">
         <p className="bg-gray-200 text-xs px-5 py-1 rounded-xl">
-          {" "}
-          {technology.category}{" "}
+          {technology.category}
         </p>
-        <p> {technology.difficulty} </p>
-        <p> {technology.rating} </p>
+
+        <p>{technology.difficulty}</p>
+
+        <p>{technology.rating}</p>
       </div>
-      <button className="btn-gradient" onClick={() => handleAdd(technology.id)}>
-        Add to Stack
+
+      <button
+        className={`btn-gradient w-full ${
+          isAdded ? "opacity-60 cursor-not-allowed" : ""
+        }`}
+        onClick={() => handleAdd(technology.id)}
+        disabled={isAdded}
+      >
+        {isAdded ? "Already Added" : "Add to Stack"}
       </button>
     </div>
   );
