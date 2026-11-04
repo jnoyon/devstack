@@ -19,7 +19,6 @@ export default function Technologies() {
       .catch(() => toast.error("Failed to load technologies"));
   }, []);
 
-  // Add Technology
   const handleAdd = (id) => {
     const technology = technologies.find((item) => item.id === id);
 
@@ -37,7 +36,6 @@ export default function Technologies() {
     toast.success(`${technology.name} added successfully`);
   };
 
-  // Remove Technology
   const handleRemove = (id) => {
     setSelectedTechnologies((prev) => prev.filter((item) => item.id !== id));
 
@@ -64,7 +62,7 @@ export default function Technologies() {
         </span>
       </div>
 
-      <div className="flex gap-5 justify-between">
+      <div className="flex flex-col md:flex-row gap-5 justify-between">
         <div className="md:w-8/12 w-full">
           <div className="grid md:grid-cols-3 gap-5">
             {technologies.map((technology) => {
@@ -84,7 +82,7 @@ export default function Technologies() {
           </div>
         </div>
 
-        <div className="w-4/12">
+        <div className="md:w-4/12">
           <Stack
             selectedTechnologies={selectedTechnologies}
             handleRemove={handleRemove}
